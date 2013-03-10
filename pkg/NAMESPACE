@@ -1,0 +1,7 @@
+import(mutils,lattice,grid)
+export(
+      Termplot,
+      panel.errbars
+      )
+S3method(Termplot,default)
+S3method(prediction.frame,default)
