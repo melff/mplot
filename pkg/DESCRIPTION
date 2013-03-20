@@ -2,10 +2,11 @@ Package: mplot
 Type: Package
 Title: Extended Termplots and Other Graphics
 Version: 0.99
-Date: 2013-03-09
+Date: 2013-03-21
 Author: Martin Elff
 Maintainer: Martin Elff <elff@gmx.com>
-Description: This package provides some 
+Description: This package provides extended termplots and a panel function for the creation
+  of error bars. Nothing fancy, but perhaps useful.
 License: GPL-2
 LazyLoad: Yes
 Depends: R (>= 2.15.0), mutils
