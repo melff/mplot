@@ -1,7 +1,16 @@
 import(mutils,lattice,grid)
 export(
       Termplot,
-      panel.errbars
+      panel.errbars,
+      intv,
+      panel.bands,
+      panel.vbars,
+      panel.vwsk,
+      areaplot,
+      panel.areaplot,
+      prepanel.areaplot,
+      withOuterStrips
       )
 S3method(Termplot,default)
 S3method(prediction.frame,default)
+S3method("[",intv)
