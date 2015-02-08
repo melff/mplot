@@ -1,4 +1,4 @@
-import(mutils,lattice,grid)
+import(memisc,lattice,grid)
 export(
       Termplot,
       panel.errbars,
