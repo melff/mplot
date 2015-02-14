@@ -6,6 +6,7 @@ export(
       panel.bands,
       panel.vbars,
       panel.vwsk,
+      panel.hwsk,
       areaplot,
       panel.areaplot,
       prepanel.areaplot,
