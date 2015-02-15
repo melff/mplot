@@ -10,8 +10,8 @@ panel.vwsk <- function(x,y,groups=NULL,
   
   if(!length(groups))
     panel.whiskers1(x,y,,
-                    col=col,
-                    lty=lty,
+                    col=col[1],
+                    lty=lty[1],
                     width=width,...)
   else{
     
@@ -77,8 +77,8 @@ panel.hwsk <- function(x,y,groups=NULL,
   
   if(!length(groups))
     panel.hwsk1(x,y,
-                col=col,
-                lty=lty,
+                col=col[1],
+                lty=lty[1],
                 width=width,...)
   else{
     

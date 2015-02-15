@@ -9,9 +9,9 @@ panel.bands <- function(x,y,groups=NULL,subscripts=NULL,
   
   if(!length(groups))
     panel.bands1(x,y,
-        col=col,
-        border=border,
-        lty=lty,
+        col=col[1],
+        border=border[1],
+        lty=lty[1],
         alpha=alpha,
         ...)
   else{
