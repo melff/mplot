@@ -9,9 +9,10 @@ panel.vwsk <- function(x,y,groups=NULL,
   superpose.line <- trellis.par.get("superpose.line")
   
   if(!length(groups))
-    panel.whiskers1(x,y,,
+    panel.whiskers1(x,y,
                     col=col[1],
                     lty=lty[1],
+                    lwd=lwd[1],
                     width=width,...)
   else{
     
@@ -27,13 +28,14 @@ panel.vwsk <- function(x,y,groups=NULL,
       panel.vwsk1(x[[g]],y[[g]],
                   col=col[g],
                   lty=lty[g],
+                  lwd=lwd[g],
                   width=width,...)
     }
   }
 }
 
 panel.vwsk1 <- function(x,y,
-                        col,lty,
+                        col,lty,lwd,
                         width,...){
 
   if(!length(x)) return(NULL)
@@ -44,11 +46,11 @@ panel.vwsk1 <- function(x,y,
   y0 <- attr(y,"lwr")
   y1 <- attr(y,"upr")
 
-  panel.segments(x0=x,x1=x,y0=y0,y1=y1,col=col,lty=lty,...)
+  panel.segments(x0=x,x1=x,y0=y0,y1=y1,col=col,lty=lty,lwd=lwd,...)
 
   offs <- width/2
-  panel.segments(x0=x-offs,x1=x+offs,y0=y0,y1=y0,col=col,lty=lty,...)
-  panel.segments(x0=x-offs,x1=x+offs,y0=y1,y1=y1,col=col,lty=lty,...)
+  panel.segments(x0=x-offs,x1=x+offs,y0=y0,y1=y0,col=col,lty=lty,lwd=lwd,...)
+  panel.segments(x0=x-offs,x1=x+offs,y0=y1,y1=y1,col=col,lty=lty,lwd=lwd,...)
 
 }
 
@@ -79,6 +81,7 @@ panel.hwsk <- function(x,y,groups=NULL,
     panel.hwsk1(x,y,
                 col=col[1],
                 lty=lty[1],
+                lwd=lwd[1],
                 width=width,...)
   else{
     
@@ -93,7 +96,7 @@ panel.hwsk <- function(x,y,groups=NULL,
     
     col <- rep(col,len=length(y))
     lty <- rep(lty,len=length(y))
-    ltw <- rep(lty,len=length(y))
+    lwd <- rep(lwd,len=length(y))
     
     for(g in seq_along(x)){
       y.g <- y[[g]]
