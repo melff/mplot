@@ -2,6 +2,8 @@ panel.vwsk <- function(x,y,groups=NULL,
                        subscripts=NULL,
                        col = superpose.symbol$col,
                        lty = superpose.line$lty,
+                       lwd = superpose.line$lwd,
+                       box.ratio = 1, box.width = box.ratio/(1 + box.ratio),
                        width=0,
                             ...){
   
@@ -23,8 +25,16 @@ panel.vwsk <- function(x,y,groups=NULL,
 
     col <- rep(col,len=length(x))
     lty <- rep(lty,len=length(x))
+    lwd <- rep(lwd,len=length(x))
     
     for(g in seq_along(x)){
+      y.g <- y[[g]]
+      
+      if(!missing(box.width) || !missing(box.ratio)){
+        width <- box.width/ngrps
+        x.g <- x.g + width*(g - (ngrps + 1)/2)
+      }
+      
       panel.vwsk1(x[[g]],y[[g]],
                   col=col[g],
                   lty=lty[g],
